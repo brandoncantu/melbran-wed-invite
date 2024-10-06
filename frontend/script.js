@@ -56,7 +56,7 @@ $(document).ready(function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     //const url "http://localhost:5000"
-    const url = "https://melbran-wed-invite.onrender.com"
+    // const url = "https://melbran-wed-invite.onrender.com"
     // Get the query string from the current URL
     const queryString = window.location.search;
     // Create a URLSearchParams object
