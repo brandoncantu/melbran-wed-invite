@@ -121,7 +121,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    getInviteInfo(name);
+
+    let load = getInviteInfo(name);
 
     attendanceSelect.addEventListener('change', function() {
         numAttendingInput.style.display = this.value === 'accept' ? 'block' : 'none';
