@@ -1,6 +1,6 @@
 const { google } = require('googleapis');
 
-const serviceAccountKeyFile = "./googlesheets/thinking-star-437802-c8-da6b7e4e0b77.json";
+const serviceAccountKeyFile = "./backend/googlesheets/thinking-star-437802-c8-da6b7e4e0b77.json";
 const sheetId = '1PwR_3KFmWSKPFIB7OiBARpTORwQoQOFX35cM1X3bkBc'
 const tabName = 'Invites'
 const range = 'A:G'
