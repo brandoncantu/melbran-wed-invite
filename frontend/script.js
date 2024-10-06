@@ -73,13 +73,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const numAttendingInput = document.getElementById('num-attending');
     const submitButton = document.getElementById('submit-button');
 
-    /*familyNameInput.addEventListener('blur', async function() {
-        console.log("Family name input:", familyNameInput);
-        const familyName = this.value;*/
-    async function getInviteInfo(fCode){
-        if (fCode) {
+    window.addEventListener('load', async function() {
+        if (name) {
             try {
-                const response = await fetch(`/api/invite-info?familyCode=${fCode}`);
+                const response = await fetch(`/api/invite-info?familyCode=${name}`);
                 const data = await response.json();
                 if (response.ok) {
                     inviteInfo.style.display = 'block';
@@ -120,9 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 inviteInfo.innerHTML = '<p>Por favor confirma tu asistencia por alguno de los siguientes medios:</p><li>81 1587 5573</li><li>81 1587 5573</li>';
             }
         }
-    }
-
-    form.addEventListener('load', getInviteInfo(name))
+    })
 
     attendanceSelect.addEventListener('change', function() {
         numAttendingInput.style.display = this.value === 'accept' ? 'block' : 'none';
