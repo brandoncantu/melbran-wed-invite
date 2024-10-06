@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    let load = getInviteInfo(name);
+    form.addEventListener('load', getInviteInfo(name))
 
     attendanceSelect.addEventListener('change', function() {
         numAttendingInput.style.display = this.value === 'accept' ? 'block' : 'none';
