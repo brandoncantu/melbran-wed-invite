@@ -1,0 +1,790 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
+/* Import Citadel font */
+@font-face {
+    font-family: 'Citadel';
+    src: url('path/to/Citadel-Regular.woff2') format('woff2'),
+         url('path/to/Citadel-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('assets/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    padding: 0;
+}
+
+.section {
+    margin: 20px auto;
+    padding: 30px 30px 0 30px;
+    background-color: #fff; /* Solid white background */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    max-width: 800px;
+    position: relative;
+}
+
+#details.section{
+    border-radius: 0;
+    border: none;
+}
+
+
+h1, h2, h3 {
+    font-family: 'Pinyon Script', cursive;
+    text-align: center;
+    color: #4a4a4a;
+    font-weight: 400; /* Adjusted to 400 as script fonts often look better without extra weight */
+}
+
+h1 {
+    font-size: 4em; /* Adjust as needed */
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: 'Pinyon Script', cursive;
+    text-align: center;
+    color: #4a4a4a;
+    font-weight: 400;
+    font-size: 2.5em; /* Adjust as needed */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add this new style for the icons */
+h2 .fa-pagelines {
+    color: #4a4a4a;
+    margin: 0 10px;
+    font-size: 0.8em;
+    vertical-align: middle;
+}
+
+/* Special case for the details section with white text */
+#details h2 .fa-pagelines {
+    color: #fff;
+}
+
+h3 {
+    font-size: 2em; /* Add specific size for h3 */
+    margin-bottom: 0;
+}
+
+#cover {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 50% 100%, 0 calc(100% - 50px));
+}
+
+.background-zoom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -50px; /* Extend slightly beyond the cover to account for the triangle */
+    background-image: url('assets/cover/cover.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: zoomEffect 20s ease-in-out infinite;
+}
+
+#cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 2;
+}
+
+/* Adjust the background-zoom to account for the new shape */
+.background-zoom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -50px; /* Extend slightly beyond the cover to account for the triangle */
+    background-image: url('assets/cover/cover.jpg');
+    background-size: cover;
+    background-position: center top;
+    animation: zoomEffect 20s ease-in-out infinite;
+}
+
+@keyframes zoomEffect {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+#cover .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+#cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+
+/* Update these styles for the cover section */
+#cover h1 {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    letter-spacing: -0.02em;
+    font-weight: 100;
+    line-height: 0.9;
+    margin: -17% 20% 0 20%;
+}
+
+#cover p {
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: .6em;
+    margin-top: 20px;
+    letter-spacing: 8px;
+}
+
+#cover h1,
+#cover p {
+    color: #fff;
+}
+
+#introduction.section {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+#introduction p {
+    font-size: 1em;
+    color: #333; /* Adjust this color if needed to ensure readability on the light gray background */
+}
+
+#gallery {
+    padding: 1rem 1rem 3.5rem 1rem !important;
+    overflow: hidden;
+    position: relative;
+    height: 85vh;
+    border-radius: 0;
+}
+
+.slideshow-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.mySlides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform 1s ease-in-out;
+}
+
+.mySlides.active {
+    z-index: 2;
+    transform: translateX(0);
+}
+
+.mySlides.prev {
+    z-index: 1;
+    transform: translateX(-100%);
+}
+
+.slide-background {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    color: white;
+    z-index: 3;
+}
+
+#gallery h2 {
+    color: white;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#dress-code {
+    text-align: center;
+}
+
+#dress-code .dress-code-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#dress-code .dress-code-image img {
+    max-width: 200px;
+    height: auto;
+}
+
+#dress-code .important {
+    color: #ff4136;
+    font-weight: bold;
+}
+
+#dress-code .important i {
+    margin-right: 5px;
+}
+
+#timer {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1em;
+    font-weight: 400;
+    margin-top: 10px;
+    letter-spacing: 0.1em;
+    padding: 10px;
+    border: 1px solid #fff;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 200px; /* Fixed width */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+}
+
+#countdown h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+#gifts {
+    padding: 40px 20px;
+}
+
+.gift-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.gift-option {
+    text-align: center;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gift-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: -10px;
+    filter: brightness(0); /* This will make the images black */
+}
+
+.fa-envelope {
+    font-size: 30px;
+    color: #000;
+    margin-bottom: -20px;
+}
+
+.gift-option p {
+    margin: 0;
+}
+
+#rsvp-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#rsvp-form input, #rsvp-form select, #rsvp-form button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    width: 100%;
+    font-family: 'Csormorant Garamond', serif;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, .8);
+    text-align: center;
+}
+
+#cover h1 .cursive-and {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 0.8em;
+    font-weight: 400;
+    text-transform: none;
+    display: inline-block;
+    margin: 0 0.1em;
+    vertical-align: middle;
+}
+#details {
+    padding: 70px 30px; /* Increased padding to accommodate leaves */
+}
+
+#details .leaf-icon {
+    position: absolute;
+    left: 48%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: auto;
+    filter: brightness(0) invert(1); /* This will make the icon white */
+}
+
+#details .leaf-icon.top {
+    top: 25px;
+}
+
+#details .leaf-icon.bottom {
+    bottom: 25px;
+    transform: translateX(-50%) rotate(180deg); /* Rotate the bottom leaf */
+}
+
+#details .event-details {
+    position: relative;
+    z-index: 2;
+}
+#rsvp-form button {
+    background-color: #666e56;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#rsvp-form button:hover {
+    background-color: #485039;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 10px 10px 10px;
+    }
+
+    .section {
+        margin: 10px auto;
+        padding: 20px;
+    }
+    
+    .event-details {
+        flex-direction: column;
+    }
+    
+    .ceremony, .reception {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+    
+    #gallery {
+        height: 70vh;
+    }
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.date-countdown, .ceremony, .reception {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#countdown {
+    margin-top: 20px;
+}
+
+#timer {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 10px;
+    letter-spacing: 0.1em;
+    padding: 15px;
+    border: 2px solid #fff;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 65%;
+}
+
+@media (min-width: 768px) {
+    #venues .event-details {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #venues .ceremony, #venues .reception {
+        width: 45%;
+    }
+}
+
+.mt-20{
+    margin-top: 2rem;
+}
+
+/* Add this new style for the details section */
+#details {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('assets/countdown1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+    padding: 50px 30px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(80, 80, 80, .3);
+    z-index: -1;
+}
+
+#details .event-details {
+    position: relative;
+    z-index: 2;
+    padding: 0;
+}
+
+#details h2,
+#details h3,
+#details p {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 0.5rem;
+}
+
+#details #timer {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 600px) {
+    #details {
+        clip-path: polygon(
+            0 25px, 
+            50% 0, 
+            100% 25px, 
+            100% calc(100% - 25px), 
+            50% 100%, 
+            0 calc(100% - 25px)
+        );
+        padding: 100px 0 100px 0;
+        margin: 25px 0 0 0;
+    }
+}
+
+/* Add these new styles for the leaf icons */
+.leaf-icon {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin: 0 10px;
+    vertical-align: middle;
+    filter: brightness(0) invert(1); /* This will make the icon white */
+}
+
+/* Flip the left leaf horizontally */
+.leaf-icon.left {
+    transform: scaleX(-1);
+}
+
+/* Special case for sections with light background */
+.section:not(#details):not(#cover) .leaf-icon {
+    filter: none; /* This will keep the icon in its original color (black) */
+}
+
+/* Remove the previous Font Awesome icon styles */
+h2 .fa-pagelines {
+    display: none;
+}
+
+.section-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.section-title h2 {
+    margin: 0 10px;
+}
+
+.leaf-icon {
+    width: 30px;
+    height: auto;
+}
+
+.leaf-icon.left {
+    transform: scaleX(-1);
+}
+
+#details .section-title h2,
+#details .leaf-icon {
+    color: #fff;
+    filter: brightness(0) invert(1);
+}
+
+/* Remove these styles if they exist */
+h2 .fa-pagelines,
+h2::before,
+h2::after {
+    display: none;
+}
+
+#gallery {
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    height: 85vh;
+}
+
+.slideshow-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.mySlides:first-child {
+    opacity: 1;
+}
+
+.mySlides.active {
+    z-index: 2;
+    opacity: 1;
+}
+
+.mySlides.prev {
+    z-index: 1;
+    opacity: 1;
+}
+
+.slide-background {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    color: white;
+    z-index: 3;
+}
+
+#gallery h2 {
+    color: white;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Add these new styles for the section titles */
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    margin: 0 15px;
+    white-space: nowrap;
+}
+
+.section-title::before,
+.section-title::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background-color: #4a4a4a;
+    max-width: 100px;
+}
+
+/* Special case for the details section with white text */
+#details .section-title::before,
+#details .section-title::after {
+    background-color: #fff;
+}
+
+.address {
+    color: #888;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.address a {
+    color: #888;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+.address a:hover {
+    color: #4a4a4a;
+}
+
+#gallery .section-title{
+    position: absolute;
+    bottom: -20px;
+    left: 82px;
+    margin: 0;
+}
+#gallery  h2{
+    color: gray;
+    text-shadow: none;
+    font-size: 2rem;
+}
+#gallery.section{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+#detail p{
+    margin: 0;
+}
+i.fas.fa-church {
+    margin-right: 10px;
+    color: #7b9466;
+}
+i.fas.fa-tree {
+    margin-right: 10px;
+    color: #7b9466;
+}
+
+#dress-code {
+    background-image: url('assets/dresscode-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+    padding: 80px 30px 50px;
+    margin: 40px auto;
+    max-width: 800px;
+    overflow: hidden;
+    border: none
+}
+
+#dress-code::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.03);
+    z-index: 1;
+}
+
+#dress-code.v-shape {
+    clip-path: polygon(0 40px, 50% 0, 100% 40px, 100% 100%, 0 100%);
+}
+
+#dress-code .section-title,
+#dress-code .dress-code-content {
+    position: relative;
+    z-index: 2;
+}
+
+#dress-code h2,
+#dress-code p {
+    color: black;
+}
+
+.dress-code-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dress-code-image img {
+    max-width: 150px;
+    height: auto;
+}
+
+#dress-code .important {
+    color: #292929;
+    font-weight: bold;
+}
+
+#dress-code .important i {
+    margin-right: 5px;
+}
+
+@media (max-width: 600px) {
+    #dress-code.v-shape {
+        clip-path: polygon(0 0px, 50% 50PX, 100% 0px, 100% 100%, 0 100%);
+        padding: 85px 20px 40px;
+        margin: 20px 0;
+    }
+}
+#family-name{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, .8);
+    text-align: center;
+}
+section#thanks {
+    background: white;
+}
+section#thanks p {
+    margin: 0;
+    padding: 0 1rem 3rem 1rem;
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Brandon & Melissa - Boda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name='robots' content='max-image-preview:large' />
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    
+    <section id="cover" class="section">
+        <div class="background-zoom"></div>
+        <div class="content">
+            <!--<h1>Brandon <span class="cursive-and">and</span> Melissa</h1>-->
+            <h1>Melissa & Brandon</h1>
+            <p>Nos casamos</p>
+        </div>
+    </section>
+
+    <section id="introduction" class="section">
+        <p>Con gran alegría, les invitamos a compartir con nosotros la celebración de nuestro amor. Su presencia hará de este día un recuerdo inolvidable.
+
+        </p>
+    </section>
+
+    <section id="details" class="section">
+        <img src="assets/icons/leaf2.png" alt="Top Leaf" class="leaf-icon top">
+        <div class="section-title">
+            <h2>Cuándo y Dónde</h2>
+        </div>
+        <div class="event-details">
+            <div class="date-countdown">
+                <h3>Fecha</h3>
+                <p><i class="fas fa-clock"></i> 15 de Noviembre 2025</p>
+                <h3>Faltan</h3>
+                <div id="countdown">
+                    <div id="timer"></div>
+                </div>
+            </div>
+        </div>
+        <img src="assets/icons/leaf2.png" alt="Bottom Leaf" class="leaf-icon bottom">
+    </section>
+
+    <div class="container">
+        <section id="venues" class="mt-20">
+            <div class="section-title">
+                <h2>Lugares</h2>
+            </div>
+            <div class="event-details">
+                <div class="ceremony">
+                    <h3>Ceremonia</h3>
+                    <p><i class="fas fa-church"></i>4:00 PM</p>
+                    <p> Parroquia del Sagrado Corazón de Jesús</p>
+                    <p class="address">
+                        <a href="https://maps.app.goo.gl/HYCk1MBdR1GBv2gK7" target="_blank" rel="noopener noreferrer">
+                            5 de Mayo, Centro, 64000 Monterrey, N.L.
+                            <i class="fas fa-map-pin"></i>
+                        </a>
+                    </p>
+                </div>
+                <div class="reception">
+                    <h3>Celebración</h3>
+                    <p><i class="fas fa-tree"></i>8:00 PM</p>
+                    <p></i> La Herencia: Jardín Agaves</p>
+                    <p class="address">
+                        <a href="https://maps.app.goo.gl/P3Y5SP1QCLmBBoEJ6" target="_blank" rel="noopener noreferrer">
+                            Quinta San Jorge, 67318 Santiago, N.L.
+                            <i class="fas fa-map-pin"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="container">
+        <section id="gallery" class="section">
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <div class="slide-background" style="background-image: url('Assets/gallery/1.jpg');"></div>
+                </div>
+
+                <div class="mySlides">
+                    <div class="slide-background" style="background-image: url('Assets/gallery/2.jpg');"></div>
+                </div>
+
+                <div class="mySlides">
+                    <div class="slide-background" style="background-image: url('Assets/gallery/3.jpg');"></div>
+                </div>
+
+                <div class="mySlides">
+                    <div class="slide-background" style="background-image: url('Assets/gallery/4.jpg');"></div>
+                </div>
+            </div>
+            <div class="section-title">
+                <h2>Nuestra Historia</h2>
+            </div>
+        </section>
+    </div>
+
+    <section id="dress-code" class="section v-shape">
+        <div class="section-title">
+            <h2>Código de Vestimenta</h2>
+        </div>
+        <div class="dress-code-content">
+            <div class="dress-code-image">
+                <img src="assets/dresscode.png" alt="Dress Code">
+            </div>
+            <p>Vestimenta Formal</p>
+            <p>-Evento sin niños-</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="gifts">
+            <div class="section-title">
+                <h2>Regalos</h2>
+            </div>
+            <p>Si deseas hacernos un regalo, tenemos estas opciones:</p>
+            <div class="gift-options">
+                <div class="gift-option">
+                    <img src="assets/icons/liverpool.png" alt="Liverpool" class="gift-icon">
+                    <p>Mesa de regalos en Liverpool</p>
+                </div>
+                <div class="gift-option">
+                    <img src="assets/icons/amazon.webp" alt="Amazon" class="gift-icon">
+                    <p>Lista de deseos en Amazon</p>
+                </div>
+                <div class="gift-option">
+                    <i class="fas fa-envelope gift-icon"></i>
+                    <p>Tendremos caja de sobres el día del evento</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <section id="rsvp" class="section">
+        <div class="section-title">
+            <h2>Confirma tu Asistencia</h2>
+        </div>
+        <form id="rsvp-form">
+            <input type="text" id="family-name" name="familyName" placeholder="Nombre y Apellido" required>
+            <input type="hidden" id="sheet-line" name="sheetLine">
+            <div id="invite-info" style="display: none;">
+                <p>Número de invitados: <span id="num-persons"></span></p>
+            </div>
+            <select name="attendance" id="attendance" required>
+                <option value="">Selecciona una opción</option>
+                <option value="accept">Asistiré</option>
+                <option value="decline">No podré asistir</option>
+            </select>
+            <select name="numAttending" id="num-attending" style="display: none;" >
+                <option value="">Numero de asistentes</option>
+            </select>
+            <button type="submit" id="submit-button">Enviar</button>
+        </form>
+    </section>
+
+    <div style="padding: 1rem; background: white;">
+        <section id="thanks">
+            <div class="section-title">
+                <h2>Gracias</h2>
+            </div>
+            <p>Agradecemos su pronta respuesta. Le esperamos en la ceremonia.</p>
+        </section>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
