@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function getInviteInfo(fCode){
         if (fCode) {
             try {
-                const response = await fetch(`${url}/api/invite-info?familyCode=${fCode}`);
+                const response = await fetch(`/api/invite-info?familyCode=${fCode}`);
                 const data = await response.json();
                 if (response.ok) {
                     inviteInfo.style.display = 'block';
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const numAttending = numAttendingInput.value;
         const sheetLine = sheetLineInput.value;
         try {
-            const response = await fetch(`${url}/api/rsvp`, {
+            const response = await fetch(`/api/rsvp`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
