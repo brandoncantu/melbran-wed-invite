@@ -55,7 +55,8 @@ $(document).ready(function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-
+    //const url "http://localhost:5000"
+    const url = "https://melbran-wed-invite.onrender.com"
     // Get the query string from the current URL
     const queryString = window.location.search;
     // Create a URLSearchParams object
@@ -78,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function getInviteInfo(fCode){
         if (fCode) {
             try {
-                const response = await fetch(`http://localhost:5000/api/invite-info?familyCode=${fCode}`);
+                const response = await fetch(`${url}/api/invite-info?familyCode=${fCode}`);
                 const data = await response.json();
                 if (response.ok) {
                     inviteInfo.style.display = 'block';
@@ -133,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const numAttending = numAttendingInput.value;
         const sheetLine = sheetLineInput.value;
         try {
-            const response = await fetch('http://localhost:5000/api/rsvp', {
+            const response = await fetch(`${url}/api/rsvp`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
