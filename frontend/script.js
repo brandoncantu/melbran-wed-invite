@@ -150,12 +150,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 attendanceSelect.style.display = 'none';
                 submitButton.disabled = true;
                 submitButton.style.backgroundColor = '#ccc';
-                submitButton.innerHTML = 'Gracias por confirmar'
                 attendanceSelect.style.display = 'none';
                 numAttendingInput.style.display = 'none';
                 if(status == "decline"){
+                    submitButton.innerHTML = 'Gracias por responder'
                     numPersonsSpan.innerText = 'Ninguno'
                 }else{
+                    submitButton.innerHTML = 'Gracias por confirmar'
                     numPersonsSpan.innerText = 'Confirmaste ' + numAttending + ' personas'
                 }
             } else {
