@@ -89,11 +89,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         attendanceSelect.style.display = 'none';
                         submitButton.disabled = true;
                         submitButton.style.backgroundColor = '#ccc';
-                        submitButton.innerHTML = 'Gracias por confirmar'
-                        numPersonsSpan.innerText = 'Confirmaste ' + data.confirmNumber + ' personas'
+                        if(data.accept == "accept"){
+                            submitButton.innerHTML = 'Gracias por confirmar'
+                            numPersonsSpan.innerText = 'Confirmaste ' + data.numPersons + ' personas'
+                        }
                         if(data.accept == "decline"){
                             submitButton.innerHTML = 'Gracias por responder';
-                            inviteInfo.style.display = 'none';
+                            inviteInfo.style.display = 'Confirmaste 0 personas';
                         }
                     }
                     for (let i = 0; i < data.numPersons; i++) {
@@ -151,7 +153,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitButton.innerHTML = 'Gracias por confirmar'
                 attendanceSelect.style.display = 'none';
                 numAttendingInput.style.display = 'none';
-                numPersonsSpan.innerText = 'Confirmaste ' + numAttending + ' personas'
+                if(status == "decline"){
+                    numPersonsSpan.innerText = 'Ninguno'
+                }else{
+                    numPersonsSpan.innerText = 'Confirmaste ' + numAttending + ' personas'
+                }
             } else {
                 //alert(data.message);
             }
