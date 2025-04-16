@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             submitButton.innerHTML = 'Gracias por confirmar'
                             numPersonsSpan.innerText = 'Confirmaste ' + data.numPersons + ' personas'
                         }
-                        if(data.accept == "decline"){
+                        else if(data.accept == "decline"){
                             submitButton.innerHTML = 'Gracias por responder';
                             inviteInfo.style.display = 'Confirmaste 0 personas';
                         }
