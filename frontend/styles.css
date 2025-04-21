@@ -111,7 +111,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: -50px; /* Extend slightly beyond the cover to account for the triangle */
-    background-image: url('assets/cover/cover.jpg');
+    background-image: url('assets/caballito.jpeg');
     background-size: cover;
     background-position: center;
     animation: zoomEffect 20s ease-in-out infinite;
@@ -134,7 +134,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: -50px; /* Extend slightly beyond the cover to account for the triangle */
-    background-image: url('assets/cover/cover.jpg');
+    background-image: url('assets/caballito.jpeg');
     background-size: cover;
     background-position: center top;
     animation: zoomEffect 20s ease-in-out infinite;
@@ -474,7 +474,7 @@ h3 {
 
 /* Add this new style for the details section */
 #details {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('assets/countdown1.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('assets/behindtree.jpeg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -785,6 +785,8 @@ section#thanks {
     background: white;
 }
 section#thanks p {
-    margin: 0;
-    padding: 0 1rem 3rem 1rem;
+    background: url(assets/whitesky.jpeg);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
