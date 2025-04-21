@@ -786,6 +786,7 @@ section#thanks {
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
+    filter: brightness(1.13);
 }
 section#thanks p {
     margin: 0;
