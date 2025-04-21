@@ -782,11 +782,12 @@ i.fas.fa-tree {
     text-align: center;
 }
 section#thanks {
-    background: white;
-}
-section#thanks p {
     background: url(assets/whitesky.jpeg);
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
+}
+section#thanks p {
+    margin: 0;
+    padding: 0 1rem 3rem 1rem;
 }
