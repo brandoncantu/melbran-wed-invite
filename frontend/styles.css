@@ -412,7 +412,7 @@ h3 {
     }
 
     .section {
-        margin: 10px auto;
+        margin: 10px 1% 0px 1%;
         padding: 20px;
     }
     
@@ -789,5 +789,5 @@ section#thanks {
 }
 section#thanks p {
     margin: 0;
-    padding: 0 1rem 3rem 1rem;
+    padding: 0 1rem 15rem 1rem;
 }
