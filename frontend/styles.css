@@ -133,16 +133,16 @@ h3 {
     top: 0;
     left: 0;
     right: 0;
-    bottom: -50px; /* Extend slightly beyond the cover to account for the triangle */
-    background-image: url('assets/caballito.jpeg');
+    bottom: 25px; /* Extend slightly beyond the cover to account for the triangle */
+    background-image: url('assets/cover-lake.png');
     background-size: cover;
     background-position: center top;
     animation: zoomEffect 20s ease-in-out infinite;
 }
 
 @keyframes zoomEffect {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    0%, 100% { transform: scale(1.4); }
+    50% { transform: scale(1.2); }
 }
 
 #cover .content {
@@ -158,7 +158,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(rgba(0, 0, 0, -0.5), rgba(0, 0, 0, 0.1));
     z-index: 1;
 }
 
@@ -170,7 +170,8 @@ h3 {
     letter-spacing: -0.02em;
     font-weight: 100;
     line-height: 0.9;
-    margin: 64% 44% 0 7%;
+    margin: 0 auto;
+    margin-top: 105%;
 }
 
 #cover p {
@@ -178,7 +179,6 @@ h3 {
     text-transform: uppercase;
     font-size: .6em;
     margin-top: 20px;
-    margin-right: 33%;
     letter-spacing: 8px;
 }
 
