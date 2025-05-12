@@ -221,7 +221,7 @@ h3 {
     transform: translateX(-100%);
 }
 
-.mySlides.next{
+.mySlides.nextSlide{
     z-index: 1;
     transform: translateX(100%);
 }
@@ -266,6 +266,7 @@ h3 {
   z-index: 2;
   user-select: none; /* Evita seleccionar el texto de la flecha */
   background-color: rgba(0,0,0,0.3); /* Fondo semitransparente */
+  border: none;
 }
 
 .previous{
