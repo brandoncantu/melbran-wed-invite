@@ -5,10 +5,9 @@ $(document).ready(function() {
     slides[0].classList.add('active'); // Make the first slide active initially
     
     function showSlides(control) {
+        let prevIndex = slideIndex;
         if(slideIndex==0){
-            let prevIndex = slides.length;
-        }else{
-            let prevIndex = slideIndex;
+            prevIndex = slides.length;
         }
         if(control==0){
             slideIndex--;
