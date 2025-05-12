@@ -3,44 +3,55 @@ $(document).ready(function() {
     let slideIndex = 0;
     const slides = document.getElementsByClassName("mySlides");
     slides[0].classList.add('active'); // Make the first slide active initially
+    slides[1].classList.add('nextSlide');
+    slides[slides.length - 1].classList.add('prev');
+    let prevIndex = slides.length -1 ;
+    let nextIndex = 1;
     
     function showSlides(control) {
-        let prevIndex = slideIndex;
-        if(slideIndex==0){
-            prevIndex = slides.length -1;
-            console.log(prevIndex);
-        }else{
-            prevIndex = slideIndex - 1;
-        }
-        if(control==0){ //Go to previous
+        if(control==0){ //Go to previous <-
+            nextIndex = slideIndex
             if(slideIndex==0){
                 slideIndex = slides.length -1;
+                prevIndex = slideIndex - 1;
+            }else if(slideIndex == 1){
+                slideIndex--;
+                prevIndex = slides.length -1;
             }else{
                 slideIndex--;
+                prevIndex = slideIndex -1;
+            }            
+            // Remove active and prev classes from all slides
+            for (let i = 0; i < slides.length; i++) {slides[i].classList.remove('active', 'prev', 'nextSlide');}
+            // Add prev class to the previous slide
+            slides[prevIndex].classList.add('prev');
+            // Add active class to the current slide
+            slides[slideIndex].classList.add('active');
+            // Add active class to the current slide
+            slides[nextIndex].classList.add('nextSlide');
+            
+        }else{// Go to next ->
+            prevIndex = slidIndex;
+            if(slideIndex == slides.length - 1){
+                slideIndex = 0;
+                nextIndex = slideIndex + 1;
+            }else if(slideIndex == slides.length - 2){
+                slideIndex++;
+                nextIndex = 0;
+            }else{
+                slideIndex++;
+                nextIndex = lideIndex + 1;
             }
-        }else{// Go to next
-            slideIndex++;
+            // Remove active and prev classes from all slides
+            for (let i = 0; i < slides.length; i++) {slides[i].classList.remove('active', 'prev', 'nextSlide');}
+            // Add prev class to the previous slide
+            slides[prevIndex].classList.add('prev');
+            // Add active class to the current slide
+            slides[slideIndex].classList.add('active');
+            // Add active class to the current slide
+            slides[nextIndex].classList.add('nextSlide');
         }
-        if (slideIndex >= slides.length) {slideIndex = 0}
-
-        // Remove active and prev classes from all slides
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove('active', 'prev');
-        }
-
-        // Add prev class to the previous slide
-        slides[prevIndex].classList.add('prev');
-
-        // Add active class to the current slide
-        slides[slideIndex].classList.add('active');
-
-        //Comment for manual Slide
-        //setTimeout(showSlides, 5000); // Change image every 5 seconds
     }
-
-    // Start the slideshow after a delay to allow the first image to be visible
-    //Comment for manual slide
-    //setTimeout(showSlides, 5000);
 
     // Añadir listeners a los botones de flecha
     const prevButton = document.querySelector(".previous");
@@ -49,8 +60,9 @@ $(document).ready(function() {
     // Verificar que los botones existen antes de añadir listeners
     if (prevButton) {
         prevButton.addEventListener('click', function() {
-            // La lógica interna es la misma:
-            showSlides(0); // Llama a tu función para mostrar la diapositiva (asume que showSlides está definida)
+            document.getElementById("prevBtn").disabled = true;
+    	    showSlides(0); // Llama a tu función para mostrar la diapositiva (asume que showSlides está definida)
+    	    setTimeout(function() {document.getElementById("prevBtn").disabled = false}, 1500);
         });
     } else {
         console.warn("Botón '.prev' no encontrado."); // Aviso si no se encuentra
@@ -58,8 +70,9 @@ $(document).ready(function() {
     
     if (nextButton) {
         nextButton.addEventListener('click', function() {
-            // La lógica interna es la misma:
+            document.getElementById("nextBtn").disabled = true;
             showSlides(1); // Llama a tu función para mostrar la diapositiva (asume que showSlides está definida)
+	        setTimeout(function() {document.getElementById("nextBtn").disabled = false}, 1500);
         });
     } else {
         console.warn("Botón '.next' no encontrado."); // Aviso si no se encuentra
