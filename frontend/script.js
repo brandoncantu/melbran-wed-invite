@@ -6,11 +6,12 @@ $(document).ready(function() {
     
     function showSlides(control) {
         let prevIndex = slideIndex;
-        if(slideIndex==0){
-            prevIndex = slides.length;
-        }
         if(control==0){
-            slideIndex--;
+            if(slideIndex==0){
+                slideIndex = slides.length
+            }else{
+                slideIndex--;
+            }
         }else{
             slideIndex++;
         }
