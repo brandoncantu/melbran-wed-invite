@@ -6,13 +6,19 @@ $(document).ready(function() {
     
     function showSlides(control) {
         let prevIndex = slideIndex;
-        if(control==0){
+        if(slideIndex==0){
+            prevIndex = slides.lenght;
+            console.log(prevIndex);
+        }else{
+            prevIndex = slideIndex - 1;
+        }
+        if(control==0){ //Go to previous
             if(slideIndex==0){
-                slideIndex = slides.length
+                slideIndex = slides.lenght;
             }else{
                 slideIndex--;
             }
-        }else{
+        }else{// Go to next
             slideIndex++;
         }
         if (slideIndex >= slides.length) {slideIndex = 0}
