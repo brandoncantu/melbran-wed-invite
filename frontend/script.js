@@ -63,7 +63,7 @@ $(document).ready(function() {
         prevButton.addEventListener('click', function() {
 	    document.getElementById("prevBtn").disabled = true;
 	    showSlides(0); // Llama a tu función para mostrar la diapositiva (asume que showSlides está definida)
-	    setTimeout(function() {document.getElementById("prevBtn").disabled = false}, 1500);
+	    setTimeout(function() {document.getElementById("prevBtn").disabled = false}, 1100);
         });
     } else {
         console.warn("Botón '.prev' no encontrado."); // Aviso si no se encuentra
@@ -73,7 +73,7 @@ $(document).ready(function() {
         nextButton.addEventListener('click', function() {
 	    document.getElementById("nextBtn").disabled = true;
             showSlides(1); // Llama a tu función para mostrar la diapositiva (asume que showSlides está definida)
-	    setTimeout(function() {document.getElementById("nextBtn").disabled = false}, 1500);
+	    setTimeout(function() {document.getElementById("nextBtn").disabled = false}, 1100);
         });
     } else {
         console.warn("Botón '.next' no encontrado."); // Aviso si no se encuentra
