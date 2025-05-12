@@ -31,7 +31,7 @@ $(document).ready(function() {
             slides[nextIndex].classList.add('nextSlide');
             
         }else{// Go to next ->
-            prevIndex = slidIndex;
+            prevIndex = slideIndex;
             if(slideIndex == slides.length - 1){
                 slideIndex = 0;
                 nextIndex = slideIndex + 1;
