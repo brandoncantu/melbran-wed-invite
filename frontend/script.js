@@ -4,9 +4,13 @@ $(document).ready(function() {
     const slides = document.getElementsByClassName("mySlides");
     slides[0].classList.add('active'); // Make the first slide active initially
     
-    function showSlides() {
+    function showSlides(control) {
         let prevIndex = slideIndex;
-        slideIndex++;
+        if(control==0){
+            SlideIndex--;
+        }else{
+            slideIndex++;
+        }
         if (slideIndex >= slides.length) {slideIndex = 0}
 
         // Remove active and prev classes from all slides
@@ -20,11 +24,36 @@ $(document).ready(function() {
         // Add active class to the current slide
         slides[slideIndex].classList.add('active');
 
-        setTimeout(showSlides, 5000); // Change image every 5 seconds
+        //Comment for manual Slide
+        //setTimeout(showSlides, 5000); // Change image every 5 seconds
     }
 
     // Start the slideshow after a delay to allow the first image to be visible
-    setTimeout(showSlides, 5000);
+    //Comment for manual slide
+    //setTimeout(showSlides, 5000);
+
+    // Añadir listeners a los botones de flecha
+    const prevButton = document.querySelector(".previous");
+    const nextButton = document.querySelector(".next");
+    
+    // Verificar que los botones existen antes de añadir listeners
+    if (prevButton) {
+        prevButton.addEventListener('click', function() {
+            // La lógica interna es la misma:
+            showSlides(0); // Llama a tu función para mostrar la diapositiva (asume que showSlides está definida)
+        });
+    } else {
+        console.warn("Botón '.prev' no encontrado."); // Aviso si no se encuentra
+    }
+    
+    if (nextButton) {
+        nextButton.addEventListener('click', function() {
+            // La lógica interna es la misma:
+            showSlides(1); // Llama a tu función para mostrar la diapositiva (asume que showSlides está definida)
+        });
+    } else {
+        console.warn("Botón '.next' no encontrado."); // Aviso si no se encuentra
+    }
 
     // Countdown timer
     const weddingDate = new Date("Nov 15, 2025 16:00:00").getTime();
