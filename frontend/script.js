@@ -9,6 +9,7 @@ $(document).ready(function() {
     let nextIndex = 1;
     
     function showSlides(control) {
+	
         if(control==0){ //Go to previous <-
             nextIndex = slideIndex
             if(slideIndex==0){
@@ -40,7 +41,7 @@ $(document).ready(function() {
                 nextIndex = 0;
             }else{
                 slideIndex++;
-                nextIndex = slideIndex + 1;
+		nextIndex = slideIndex + 1;
             }
             // Remove active and prev classes from all slides
             for (let i = 0; i < slides.length; i++) {slides[i].classList.remove('active', 'prev', 'nextSlide');}
@@ -60,9 +61,9 @@ $(document).ready(function() {
     // Verificar que los botones existen antes de añadir listeners
     if (prevButton) {
         prevButton.addEventListener('click', function() {
-            document.getElementById("prevBtn").disabled = true;
-    	    showSlides(0); // Llama a tu función para mostrar la diapositiva (asume que showSlides está definida)
-    	    setTimeout(function() {document.getElementById("prevBtn").disabled = false}, 1500);
+	    document.getElementById("prevBtn").disabled = true;
+	    showSlides(0); // Llama a tu función para mostrar la diapositiva (asume que showSlides está definida)
+	    setTimeout(function() {document.getElementById("prevBtn").disabled = false}, 1500);
         });
     } else {
         console.warn("Botón '.prev' no encontrado."); // Aviso si no se encuentra
@@ -70,9 +71,9 @@ $(document).ready(function() {
     
     if (nextButton) {
         nextButton.addEventListener('click', function() {
-            document.getElementById("nextBtn").disabled = true;
+	    document.getElementById("nextBtn").disabled = true;
             showSlides(1); // Llama a tu función para mostrar la diapositiva (asume que showSlides está definida)
-	        setTimeout(function() {document.getElementById("nextBtn").disabled = false}, 1500);
+	    setTimeout(function() {document.getElementById("nextBtn").disabled = false}, 1500);
         });
     } else {
         console.warn("Botón '.next' no encontrado."); // Aviso si no se encuentra
