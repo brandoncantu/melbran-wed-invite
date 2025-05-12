@@ -7,7 +7,7 @@ $(document).ready(function() {
     function showSlides(control) {
         let prevIndex = slideIndex;
         if(control==0){
-            SlideIndex--;
+            slideIndex--;
         }else{
             slideIndex++;
         }
