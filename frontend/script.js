@@ -7,14 +7,14 @@ $(document).ready(function() {
     function showSlides(control) {
         let prevIndex = slideIndex;
         if(slideIndex==0){
-            prevIndex = slides.length;
+            prevIndex = slides.length -1;
             console.log(prevIndex);
         }else{
             prevIndex = slideIndex - 1;
         }
         if(control==0){ //Go to previous
             if(slideIndex==0){
-                slideIndex = slides.length;
+                slideIndex = slides.length -1;
             }else{
                 slideIndex--;
             }
