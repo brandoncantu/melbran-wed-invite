@@ -122,7 +122,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: 25px; /* Extend slightly beyond the cover to account for the triangle */
-    background-image: url('assets/cover-lake.jpg');
+    background-image: url('assets/photos/cover-lake.jpg');
     background-size: cover;
     background-position: center top;
     animation: zoomEffect 20s ease-in-out infinite;
@@ -771,7 +771,7 @@ i.fas.fa-tree {
     text-align: center;
 }
 section#thanks {
-    background: url(assets/white-sky.jpg);
+    background: url(assets/photos/white-sky.jpg);
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
