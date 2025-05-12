@@ -40,7 +40,7 @@ $(document).ready(function() {
                 nextIndex = 0;
             }else{
                 slideIndex++;
-                nextIndex = lideIndex + 1;
+                nextIndex = slideIndex + 1;
             }
             // Remove active and prev classes from all slides
             for (let i = 0; i < slides.length; i++) {slides[i].classList.remove('active', 'prev', 'nextSlide');}
