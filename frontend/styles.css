@@ -245,6 +245,34 @@ h3 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
+/* Botones Anterior y Siguiente */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px; /* Mitad del alto del padding + font-size aprox. para centrar verticalmente */
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none; /* Evita seleccionar el texto de la flecha */
+  background-color: rgba(0,0,0,0.3); /* Fondo semitransparente */
+}
+
+/* Posicionar el botón "siguiente" a la derecha */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Efecto hover para los botones */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8); /* Fondo más oscuro al pasar el ratón */
+}
+
 #dress-code {
     text-align: center;
 }
