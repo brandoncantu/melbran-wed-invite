@@ -142,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     sheetLineInput.value = data.sheetLine;
                     familyNameInput.disabled = true;
                     familyNameInput.style.border = 'none';
-		    familyInput.style.maxWidth = 'fit-content';
                     if (data.accept == "accept" || data.accept == "decline") {
                         attendanceSelect.style.display = 'none';
                         submitButton.disabled = true;
