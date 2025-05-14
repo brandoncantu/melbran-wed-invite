@@ -10,7 +10,7 @@ function getCredentials() {
 
 const sheetId = '1PwR_3KFmWSKPFIB7OiBARpTORwQoQOFX35cM1X3bkBc'
 const tabName = 'Invites'
-const range = 'A:G'
+const range = 'A:H'
 const sheets = google.sheets('v4');
 
 exports.getInviteInfo = async (req, res) => {
@@ -33,12 +33,18 @@ exports.getInviteInfo = async (req, res) => {
 
         const rows = response.data.values;
         let invite = null
+        let mb = []
         let sheetLine = 1
         if (rows.length) {
             console.log('Data retrieved from Google Sheets:');
             rows.forEach((row) => {
                 if(row[2] == familyCode){
-                    invite = { familyName: row[4], numPersons: row[3], sheetLine: sheetLine, accept: row[5], confirmNumber: row[6] }
+                    if(row[7]=="m"){//invitado melissa
+                        mb = ["clabeinterbancariaMelissa", "bancoMelissa"]
+                    }else{//invitado brandon
+                        mb = ["clabeinterbancariaBrandon", "bancoBrandon"]
+                    }
+                    invite = { familyName: row[4], numPersons: row[3], sheetLine: sheetLine, accept: row[5], confirmNumber: row[6], mb: mb }
                 }
                 sheetLine++
             });
