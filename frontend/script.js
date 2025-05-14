@@ -121,6 +121,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const familyNameInput = document.getElementById('family-name');
     const sheetLineInput = document.getElementById('sheet-line');
     const inviteInfo = document.getElementById('invite-info');
+    const transferClabe = document.getElementById('transfer-clabe');
+    const transferBanco = document.getElementById('transfer-banco');
     const numPersonsSpan = document.getElementById('num-persons');
     const attendanceSelect = document.getElementById('attendance');
     const numAttendingInput = document.getElementById('num-attending');
@@ -135,6 +137,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     inviteInfo.style.display = 'block';
                     numPersonsSpan.textContent = data.numPersons;
                     familyNameInput.value = data.familyName;
+		    transferClabe.textContent = data.mb[0];
+                    transferBanco.textContent = data.mb[1];
                     sheetLineInput.value = data.sheetLine;
                     familyNameInput.disabled = true;
                     familyNameInput.style.border = 'none';
