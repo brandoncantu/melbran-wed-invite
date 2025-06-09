@@ -137,8 +137,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     inviteInfo.style.display = 'block';
                     numPersonsSpan.textContent = data.numPersons;
                     familyNameInput.value = data.familyName;
-		    transferClabe.textContent = data.mb[0];
-                    transferBanco.textContent = data.mb[1];
+		    //transferClabe.textContent = data.mb[0];
+                    //transferBanco.textContent = data.mb[1];
                     sheetLineInput.value = data.sheetLine;
                     familyNameInput.disabled = true;
                     familyNameInput.style.border = 'none';
