@@ -166,14 +166,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     attendanceSelect.style.display = 'none';
                     submitButton.style.display = 'none';
                     inviteInfo.style.display = 'block';
-                    inviteInfo.innerHTML = '<p>Por favor confirma tu asistencia por alguno de los siguientes medios:</p><li>81 1587 5573</li><li>81 1587 5573</li>';
+                    inviteInfo.innerHTML = '<p>Por favor confirma tu asistencia por whatsapp:</p><li>81 1635 9468</li><li>81 1587 5573</li>';
                 }
             } catch (error) {
                 familyNameInput.style.display = 'none';
                 attendanceSelect.style.display = 'none';
                 submitButton.style.display = 'none';
                 inviteInfo.style.display = 'block';
-                inviteInfo.innerHTML = '<p>Por favor confirma tu asistencia por alguno de los siguientes medios:</p><li>81 1587 5573</li><li>81 1587 5573</li>';
+                inviteInfo.innerHTML = '<p>Por favor confirma tu asistencia por whatsapp:</p><li>81 1635 9468</li><li>81 1587 5573</li>';
             }
         }
     })
