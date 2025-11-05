@@ -140,6 +140,7 @@ exports.tables = async (req, res) => {
     if (rows.length) {
       console.log("Data retrieved from Google Sheets:");
       rows.forEach((row) => {
+        let guest = null;
         if (row[5] == familyCode) {
           guest = {
             id: row[0],
