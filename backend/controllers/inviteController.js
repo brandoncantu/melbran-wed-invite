@@ -149,7 +149,9 @@ exports.tables = async (req, res) => {
           };
         }
         sheetLine++;
-        invite_guests.push(guest);
+        if (guest != null) {
+          invite_guests.push(guest);
+        }
       });
     }
 
