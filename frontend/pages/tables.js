@@ -33,11 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
             // Crear el elemento <i> para el número de mesa
             const tableNo = document.createElement("i");
             tableNo.classList.add("table-no", "tbl-green");
-            tableNo.textContent = item.numeroMesa;
+            tableNo.textContent = item.table;
 
             // Crear el elemento <p> para el nombre
             const nameP = document.createElement("p");
-            nameP.textContent = item.nombre;
+            nameP.textContent = item.name;
 
             // Agregar los elementos al div principal
             guestDiv.appendChild(tableSpace);
