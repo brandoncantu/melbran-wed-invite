@@ -19,7 +19,7 @@ app.use('/api', inviteRoutes);
 
 // Add this after your API routes
 app.get("/tables", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/pages/pages.html"));
+  res.sendFile(path.join(__dirname, "../frontend/pages/tables.html"));
 });
 
 app.get('*', (req, res) => {
