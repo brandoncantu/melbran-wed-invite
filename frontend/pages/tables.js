@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       try {
         const response = await fetch(`/api/tables?familyCode=${name}`);
         const data = await response.json();
+        console.log(data);
         if (response.ok) {
           data.forEach((item) => {
             // Crear el div principal
@@ -45,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         }
       } catch (error) {
-        console.log("Error en appending html");
+        console.log(error);
       }
     }
   });
