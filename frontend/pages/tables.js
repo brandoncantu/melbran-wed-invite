@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("guests-section");
 
   window.addEventListener("load", async function () {
+    console.log(name);
     if (name) {
       try {
         const response = await fetch(`/api/tables?familyCode=${name}`);
