@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Get the value of a specific query parameter (e.g., "name")
   const name = urlParams.get("familyCode");
 
-  const container = document.getElementById("guests-section");
+  const container = document.getElementById("guests");
 
   window.addEventListener("load", async function () {
     console.log(name);
