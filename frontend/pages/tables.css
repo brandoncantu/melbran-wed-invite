@@ -297,6 +297,7 @@ section#thanks p {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  margin-top: -60px;
 }
 
 .guests {
