@@ -6,33 +6,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const name = urlParams.get("familyCode");
 
   const container = document.getElementById("guests");
+  const loader = document.getElementById("loader");
 
   const table_color = {
-    "1": "green",
-    "2": "yellow",
-    "3": "orange",
-    "4": "cream",
-    "5": "blue",
-    "6": "pink",
-    "7": "purple",
-    "8": "green",
-    "9": "blue",
-    "10": "cream",
-    "11": "orange",
-    "12": "purple",
-    "13": "orange",
-    "14": "pink",
-    "15": "yellow",
-    "16": "blue",
-    "17": "green",
-    "18": "purple",
-    "19": "cream",
-    "20": "blue",
-    "21": "cream",
-    "22": "yellow",
-    "23": "green",
-    "24": "pink",
-    "25": "orange",
+    1: "green",
+    2: "yellow",
+    3: "orange",
+    4: "cream",
+    5: "blue",
+    6: "pink",
+    7: "purple",
+    8: "green",
+    9: "blue",
+    10: "cream",
+    11: "orange",
+    12: "purple",
+    13: "orange",
+    14: "pink",
+    15: "yellow",
+    16: "blue",
+    17: "green",
+    18: "purple",
+    19: "cream",
+    20: "blue",
+    21: "cream",
+    22: "yellow",
+    23: "green",
+    24: "pink",
+    25: "orange",
   };
 
   window.addEventListener("load", async function () {
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const data = await response.json();
         console.log(data);
         if (response.ok) {
+          loader.remove();
           data.forEach((item) => {
             console.log(item);
             // Crear el div principal

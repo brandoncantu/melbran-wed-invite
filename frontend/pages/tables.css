@@ -367,3 +367,7 @@ section#thanks p {
   background-color: #f3bbc4;
   color: #a01340;
 }
+
+#loader {
+  margin: 1rem auto 3rem auto;
+}
