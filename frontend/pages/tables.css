@@ -1,0 +1,368 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
+
+/* Import Citadel font */
+@font-face {
+  font-family: "Citadel";
+  src: url("path/to/Citadel-Regular.woff2") format("woff2"),
+    url("path/to/Citadel-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Cormorant Garamond", serif;
+  background-image: linear-gradient(
+      rgba(244, 242, 234, 0.85),
+      rgba(245, 242, 236, 0.1)
+    ),
+    url("../assets/dresscode-background.jpg");
+  background-size: cover;
+  /*background-attachment: fixed;*/
+  background-position: center;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  padding: 0;
+}
+
+.section {
+  margin: 20px auto;
+  padding: 30px 30px 0 30px;
+  border-radius: 8px;
+  max-width: 800px;
+  position: relative;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Pinyon Script", cursive;
+  text-align: center;
+  color: #4a4a4a;
+  font-weight: 400; /* Adjusted to 400 as script fonts often look better without extra weight */
+}
+
+h1 {
+  font-size: 4em; /* Adjust as needed */
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: "Pinyon Script", cursive;
+  text-align: center;
+  color: #4a4a4a;
+  font-weight: 400;
+  font-size: 2.5em; /* Adjust as needed */
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add this new style for the icons */
+h2 .fa-pagelines {
+  color: #4a4a4a;
+  margin: 0 10px;
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+/* Special case for the details section with white text */
+#details h2 .fa-pagelines {
+  color: #fff;
+}
+
+h3 {
+  font-size: 2em; /* Add specific size for h3 */
+  margin-bottom: 0;
+}
+
+#cover {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 50px),
+    50% 100%,
+    0 calc(100% - 50px)
+  );
+}
+
+#cover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 2;
+}
+
+/* Adjust the background-zoom to account for the new shape */
+.background-zoom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -200px; /* Extend slightly beyond the cover to account for the triangle */
+  background-image: url("../assets/photos/breaky-kiss.jpg");
+  background-size: 130%;
+  background-position: left center;
+}
+
+#cover .content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+#cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, -0.5), rgba(0, 0, 0, 0.5));
+  z-index: 1;
+}
+
+/* Update these styles for the cover section */
+#cover h1 {
+  font-family: "Ephesis", cursive;
+  /* text-transform: uppercase; */
+  font-size: 16px;
+  /* letter-spacing: 0.1em; */
+  font-weight: 100;
+  line-height: 0.9;
+  margin: 0 auto;
+  margin-top: 1%;
+}
+
+#cover p {
+  font-family: "Cormorant Garamond", serif;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  margin-top: 7px;
+  letter-spacing: 5px;
+}
+
+#cover h1,
+#cover p {
+  color: #fff;
+}
+#cover h1 .cursive-and {
+  font-family: "Pinyon Script", cursive;
+  font-size: 0.8em;
+  font-weight: 400;
+  text-transform: none;
+  display: inline-block;
+  margin: 0 0.1em;
+  vertical-align: middle;
+}
+#details .event-details {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 10px 10px 10px;
+  }
+
+  .section {
+    margin: 10px 1% 0px 1%;
+    padding: 20px;
+  }
+
+  .event-details {
+    flex-direction: column;
+  }
+  .background-zoom {
+    bottom: -65px; /* Extend slightly beyond the cover to account for the triangle */
+  }
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mt-20 {
+  margin-top: 2rem;
+}
+
+/* Add this new style for the details section */
+#details {
+  color: #262626;
+  position: relative;
+  margin: 0 auto -10px auto;
+  max-width: 800px;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 30px 30px 0px 30px; /* Increased padding to accommodate leaves */
+}
+
+#details .event-details {
+  position: relative;
+  z-index: 2;
+  padding: 0;
+}
+
+.section-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.section-title h2 {
+  margin: 0 10px;
+}
+
+#details .section-title h2,
+#details .leaf-icon {
+  color: #fff;
+  filter: brightness(0) invert(1);
+}
+
+/* Remove these styles if they exist */
+h2 .fa-pagelines,
+h2::before,
+h2::after {
+  display: none;
+}
+
+/* Add these new styles for the section titles */
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-title h2 {
+  margin: 0 15px;
+  white-space: nowrap;
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  max-width: 100px;
+}
+
+#detail p {
+  margin: 0;
+}
+
+section#thanks {
+  background: url(assets/photos/white-sky.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(1.13);
+  background-color: white;
+}
+section#thanks p {
+  margin: 0;
+  padding: 0 1rem 3.5rem 1rem;
+}
+
+.mapa-salon {
+  height: 80vh;
+  background: url(../assets/tables.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.guests {
+  display: block;
+  width: 100%;
+}
+.table-no {
+  margin: 0 3px;
+  font-weight: 600;
+  font-style: normal;
+  border-radius: 3px;
+}
+.table-space {
+  width: calc(35% - 1.25rem);
+}
+.guest-name {
+  display: flex;
+}
+.guest-name i {
+  width: 1.25rem;
+  margin: 2px 0;
+  height: 1.25rem;
+  font-size: 13px;
+}
+.guest-name p {
+  width: calc(65%);
+  margin: 1px 5px;
+  color: #333333;
+  align-items: center;
+  text-align: left;
+  font-family: "Ephesis", cursive;
+  font-size: 18px;
+  word-spacing: 5px;
+}
+
+.tbl-green {
+  background-color: #ccd48e;
+  color: #5ca716;
+}
+
+.tbl-yellow {
+  background-color: #fcdb40;
+  color: #ce740d;
+}
+
+.tbl-orange {
+  background-color: #f0a755;
+  color: #ce540e;
+}
+
+.tbl-cream {
+  background-color: #feeab9;
+  color: #c27e3a;
+}
+
+.tbl-blue {
+  background-color: #cde2ce;
+  color: #249f91;
+}
+
+.tbl-purple {
+  background-color: #c2c5e3;
+  color: #5c19b3;
+}
+
+.tbl-pink {
+  background-color: #f3bbc4;
+  color: #a01340;
+}
