@@ -146,11 +146,26 @@ exports.tables = async (req, res) => {
             id: row[0],
             name: row[1],
             table: row[6],
+            line: sheetLine,
           };
         }
         sheetLine++;
+        const values = [["1"]];
+        const resource = {
+          values,
+        };
+
         if (guest != null) {
           invite_guests.push(guest);
+
+          let lineToUpdate = "H" + sheetLine;
+
+          sheets.spreadsheets.values.update({
+            spreadsheetId: sheetId,
+            range: "MesasFinal!" + lineToUpdate,
+            valueInputOption: "USER_ENTERED",
+            resource,
+          });
         }
       });
     }
