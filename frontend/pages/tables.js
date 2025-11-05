@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(name);
     if (name) {
       try {
-        const response = await fetch(`/api/tables?familyCode=${name}`);
+        const response = await fetch(
+          `https://melbran-wed-invite.onrender.com/api/tables?familyCode=${name}`
+        );
         const data = await response.json();
         console.log(data);
         if (response.ok) {
