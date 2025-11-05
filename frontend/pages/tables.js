@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(data);
         if (response.ok) {
           data.forEach((item) => {
+            console.log(item);
             // Crear el div principal
             const guestDiv = document.createElement("div");
             guestDiv.classList.add("guest-name");
