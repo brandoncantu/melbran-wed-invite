@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  //const url "http://localhost:5000"
-  // const url = "https://melbran-wed-invite.onrender.com"
-  // Get the query string from the current URL
   const queryString = window.location.search;
   // Create a URLSearchParams object
   const urlParams = new URLSearchParams(queryString);
@@ -9,6 +6,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const name = urlParams.get("familyCode");
 
   const container = document.getElementById("guests");
+
+  const table_color = {
+    "1": "green",
+    "2": "yellow",
+    "3": "orange",
+    "4": "cream",
+    "5": "blue",
+    "6": "pink",
+    "7": "purple",
+    "8": "green",
+    "9": "blue",
+    "10": "cream",
+    "11": "orange",
+    "12": "purple",
+    "13": "orange",
+    "14": "pink",
+    "15": "yellow",
+    "16": "blue",
+    "17": "green",
+    "18": "purple",
+    "19": "cream",
+    "20": "blue",
+    "21": "cream",
+    "22": "yellow",
+    "23": "green",
+    "24": "pink",
+    "25": "orange",
+  };
 
   window.addEventListener("load", async function () {
     console.log(name);
@@ -32,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Crear el elemento <i> para el número de mesa
             const tableNo = document.createElement("i");
-            tableNo.classList.add("table-no", "tbl-green");
+            tableNo.classList.add("table-no", `tbl-${table_color[item.table]}`);
             tableNo.textContent = item.table;
 
             // Crear el elemento <p> para el nombre
