@@ -18,14 +18,14 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 app.use('/api', inviteRoutes);
 
 // Add this after your API routes
+app.get("/tables", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/pages/pages.html"));
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
-// Add this after your API routes
-app.get("/tables", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/pages/pages.html"));
-});
 
 app.get('/health', (req, res) => {
   res.status(200).send('OK');
