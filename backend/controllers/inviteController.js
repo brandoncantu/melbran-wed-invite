@@ -149,7 +149,6 @@ exports.tables = async (req, res) => {
             line: sheetLine,
           };
         }
-        sheetLine++;
         const values = [["1"]];
         const resource = {
           values,
@@ -173,6 +172,8 @@ exports.tables = async (req, res) => {
             valueInputOption: "USER_ENTERED",
             resource,
           });
+
+          sheetLine++;
         }
       });
     }
