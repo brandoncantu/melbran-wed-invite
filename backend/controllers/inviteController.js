@@ -136,7 +136,7 @@ exports.tables = async (req, res) => {
 
     const rows = response.data.values;
     let invite_guests = [];
-    let sheetLine = 1;
+    let sheetLine = 0;
     if (rows.length) {
       console.log("Data retrieved from Google Sheets:");
       rows.forEach((row) => {
@@ -149,6 +149,7 @@ exports.tables = async (req, res) => {
             line: sheetLine,
           };
         }
+        sheetLine++;
         const values = [["1"]];
         const resource = {
           values,
@@ -172,8 +173,6 @@ exports.tables = async (req, res) => {
             valueInputOption: "USER_ENTERED",
             resource,
           });
-
-          sheetLine++;
         }
       });
     }
