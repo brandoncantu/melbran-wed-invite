@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
         const data = await response.json();
         console.log(data);
-        if (response.ok) {
+        if (response.ok && data.length > 0) {
           loader.remove();
           data.forEach((item) => {
             console.log(item);
