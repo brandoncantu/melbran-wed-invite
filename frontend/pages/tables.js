@@ -77,6 +77,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       } catch (error) {
         console.log(error);
+        container.innerHTML = `<div class="guest-name" style="
+            display: block;
+        "><h4 style="
+            width: 100%;
+            font-family: 'Ephesis';
+            font-weight: 100;
+            font-size: 1.3rem;
+            line-height: 1.3rem;
+        ">Descarga el listado con la organizacion de mesas</h4>
+        <a href="https://melbran-wed-invite.onrender.com/assets/MesasVertical.pdf" style="
+            width: 100%;
+            font-family: serif;
+            color: #736341;
+            font-size: 1rem;
+        ">Busca tu mesa.pdf
+        </a></div>`;
       }
     }
   });
