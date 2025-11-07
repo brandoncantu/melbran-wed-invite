@@ -74,6 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
             // Agregar el div principal al contenedor
             container.appendChild(guestDiv);
           });
+        } else {
+          throw new Error("Cannot divide by zero.");
         }
       } catch (error) {
         console.log(error);
