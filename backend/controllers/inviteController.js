@@ -158,21 +158,23 @@ exports.tables = async (req, res) => {
         if (guest != null) {
           invite_guests.push(guest);
 
-          const credentials = getCredentials();
-          const auth = new google.auth.GoogleAuth({
-            credentials,
-            scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-          });
+          if (parseInt(row[7]) != 1) {
+            const credentials = getCredentials();
+            const auth = new google.auth.GoogleAuth({
+              credentials,
+              scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+            });
 
-          const sheets = google.sheets({ version: "v4", auth });
-          let lineToUpdate = "H" + sheetLine;
+            const sheets = google.sheets({ version: "v4", auth });
+            let lineToUpdate = "H" + sheetLine;
 
-          sheets.spreadsheets.values.update({
-            spreadsheetId: sheetId,
-            range: "MesasFinal!" + lineToUpdate,
-            valueInputOption: "USER_ENTERED",
-            resource,
-          });
+            sheets.spreadsheets.values.update({
+              spreadsheetId: sheetId,
+              range: "MesasFinal!" + lineToUpdate,
+              valueInputOption: "USER_ENTERED",
+              resource,
+            });
+          }
         }
       });
     }
